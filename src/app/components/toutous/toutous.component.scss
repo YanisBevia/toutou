@@ -1,0 +1,77 @@
+.toutous{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+
+    .toutou-input, .toutou-submit, .toutou-put{
+        width: 100%;
+        padding: 20px 30px;
+        font: normal 20px sans-serif;
+        border-radius: 10px;
+        outline: none;
+        margin: 0 0 25px;
+    }
+    .toutou-input, .toutou-put{
+        color: #252525;
+        background: #fff;
+        border-color: #fff;
+    }
+    .toutou-submit{
+        color: #fff;
+        background: #4b73a8;
+        border-color: #4b73a8;
+    }
+    .toutou{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 30px;
+        background: #ccd69e;
+        color: #252525;
+        row-gap: 20px;
+        border-radius: 10px;
+        div, button{
+            font: normal 20px sans-serif;
+        }
+
+        .btns{
+            display: flex;
+            gap: 20px;
+        }
+
+        .delete, .click-done, .click-put{
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            color: #fff;
+        }
+        .delete{
+            background: #aa1d1d;
+        }
+        .click-done{
+            background: #3c850b;
+        }
+        .click-put{
+            background: #4b73a8;
+        }
+
+        .put-form:not(.put){
+            display: none;
+        }
+        .put-form{
+            flex: 1 0 100%;
+            .toutou-submit{
+                margin: 0;
+            }
+        }
+    }
+    .done{
+        opacity: 0.5;
+        .content{
+            text-decoration: line-through;
+        }
+    }
+}

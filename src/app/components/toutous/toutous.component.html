@@ -1,0 +1,21 @@
+<div class="toutous">
+
+    <form (submit)="addToutou()">
+        <input [(ngModel)]="inputToutou" class="toutou-input" type="text" name="inputToutou" placeholder="Nom du toutou...">
+        <input type="submit" value="Ajouter un toutou" class="toutou-submit" />
+    </form>
+
+    <div *ngFor="let toutou of toutous; let i = index;" [ngClass]="toutou.completed ? 'done' : ''"  class="toutou">
+        <div class="id">{{i}}</div>
+        <div class="content">{{toutou.content}}</div>
+        <div class="btns">
+            <button class="click-done" (click)="toggleDone(i)">Fait</button>
+            <button class="click-put" (click)="togglePut(i)">Modifier</button>
+            <button class="delete" (click)="deleteToutou(i)">Enlever</button>
+        </div>
+        <form class="put-form" [ngClass]="toutou.put ? 'put' : ''" (submit)="putToutou(i)">
+            <input [(ngModel)]="inputToutou2" class="toutou-put" type="text" name="inputToutou2" placeholder="Nouveau nom du toutou..."/>
+            <input type="submit" value="Modifier le toutou" class="toutou-submit">
+        </form>
+    </div>
+</div>
